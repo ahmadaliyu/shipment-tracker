@@ -1,0 +1,12 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "const": ["./const"],
+      "AppIcons": ["assets/icons/icons"]
+    },
+    "types": ["node"]
+  }
+}
