@@ -21,58 +21,56 @@ const BottomNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        //@ts-expect-error
-        style: {
-          height: 60,
-          borderTopWidth: 0,
-          elevation: 0,
-        },
-        showLabel: false,
-        tabBarActiveTintColor: theme.colors.secondary,
-        headerShown: false,
         tabBarStyle: {
-          paddingTop: 20,
-          marginTop: 0,
           height: 70,
           justifyContent: "center",
           alignItems: "center",
+          borderTopWidth: 0,
+          elevation: 0,
         },
+        tabBarActiveTintColor: theme.colors.primary,
+        tabBarInactiveTintColor: "#666",
+        tabBarLabelStyle: {
+          fontSize: 12,
+          top: 5,
+        },
+        headerShown: false,
       }}
     >
       <Tab.Screen
         name="Home"
         component={ShipmentScreen}
         options={{
-          tabBarIcon: ({ color, focused }) =>
+          tabBarIcon: ({ focused }) =>
             focused ? <ShipmentIconActive /> : <ShipmentIconInActive />,
-          tabBarShowLabel: false,
+          tabBarLabel: "Shipments",
         }}
       />
       <Tab.Screen
         name="Scan"
         component={Scan}
         options={{
-          tabBarIcon: ({ color, focused }) =>
+          tabBarIcon: ({ focused }) =>
             focused ? <ScanActive /> : <ScanInActive />,
-          tabBarShowLabel: false,
+          tabBarLabel: "Scan",
         }}
       />
       <Tab.Screen
         name="Wallet"
         component={Wallet}
         options={{
-          tabBarIcon: ({ color, focused }) =>
+          tabBarIcon: ({ focused }) =>
             focused ? <WalletActive /> : <WalletInActive />,
-          tabBarShowLabel: false,
+          tabBarLabel: "Wallet",
         }}
       />
       <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
-          tabBarIcon: ({ color, focused }) =>
+          tabBarIcon: ({ focused }) =>
             focused ? <ProfileActive /> : <ProfileInActive />,
-          tabBarShowLabel: false,
+          tabBarLabel: "Profile",
         }}
       />
     </Tab.Navigator>

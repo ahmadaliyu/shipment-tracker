@@ -13,7 +13,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ahmadali.shipmenttracker"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -22,6 +23,12 @@
       "eas": {
         "projectId": "515419f1-2278-4b43-977e-534ba64c2bcf"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/515419f1-2278-4b43-977e-534ba64c2bcf"
     }
   }
 }
