@@ -293,6 +293,17 @@ export default function ShipmentScreen() {
     />
   );
 
+  // Filter the data based on the search input, can be filtered based on many criteria
+  const filteredData = data?.message.filter((item) => {
+    const lowerCaseInput = inputText.toLowerCase();
+    return (
+      item.origin_city.toLowerCase().includes(lowerCaseInput) ||
+      item.destination_city.toLowerCase().includes(lowerCaseInput) ||
+      item.status.toLowerCase().includes(lowerCaseInput)
+    );
+  });
+  
+
   return (
     <ScrollContainer
       disableScroll
@@ -380,7 +391,7 @@ export default function ShipmentScreen() {
       )}
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={data?.message}
+        data={filteredData}
         renderItem={({ item }) => (
           <ShipmentItem
             expand={!!expandedItems?.[item?.name]}
